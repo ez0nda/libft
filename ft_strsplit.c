@@ -6,7 +6,7 @@
 /*   By: ezonda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 11:20:02 by ezonda            #+#    #+#             */
-/*   Updated: 2018/11/08 13:09:00 by ezonda           ###   ########.fr       */
+/*   Updated: 2018/11/08 15:38:19 by ezonda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,9 +75,9 @@ char	**ft_fill_tab(const char *str, int i, char c, char **tab)
 
 char	**ft_strsplit(char const *s, char c)
 {
-	int i;
-	int words;
-	char **tab;
+	int		i;
+	int		words;
+	char	**tab;
 
 	i = 0;
 	words = ft_number_of_words(s, c);

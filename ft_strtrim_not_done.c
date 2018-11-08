@@ -1,30 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ezonda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/07 14:58:59 by ezonda            #+#    #+#             */
-/*   Updated: 2018/11/08 15:06:52 by ezonda           ###   ########.fr       */
+/*   Created: 2018/11/08 15:28:11 by ezonda            #+#    #+#             */
+/*   Updated: 2018/11/08 16:38:31 by ezonda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-char	*ft_strcat(char *dest, const char *src)
+char	*ft_strtrim(char const *s)
 {
 	int i;
 	int n;
+	char *str;
 
-	n = ft_strlen(dest);
 	i = 0;
-	while (src[i])
-	{
-		dest[n] = src[i];
-		n++;
+	n = 0;
+	str = NULL;
+	while (s[i] <= 32)
 		i++;
+	while (s[i])
+	{
+		str[n] = s[i];
+		i++;
+		n++;
 	}
-	dest[n] = '\0';
-	return (dest);
+	str[n] = '\0';
+	return (str);
+}
+
+int		main(int ac, char **av)
+{
+	if (ac != 2)
+		return (1);
+	printf("%s", ft_strtrim(av[1]));
+	return (0);
 }

@@ -1,30 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ezonda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/07 14:58:59 by ezonda            #+#    #+#             */
-/*   Updated: 2018/11/08 15:06:52 by ezonda           ###   ########.fr       */
+/*   Created: 2018/11/08 17:01:43 by ezonda            #+#    #+#             */
+/*   Updated: 2018/11/08 17:21:33 by ezonda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *dest, const char *src)
+int		ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	int i;
-	int n;
+	if (ft_strncmp(s1, s2, n) == 0)
 
-	n = ft_strlen(dest);
-	i = 0;
-	while (src[i])
-	{
-		dest[n] = src[i];
-		n++;
-		i++;
-	}
-	dest[n] = '\0';
-	return (dest);
 }

@@ -1,30 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ezonda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/07 14:58:59 by ezonda            #+#    #+#             */
-/*   Updated: 2018/11/08 15:06:52 by ezonda           ###   ########.fr       */
+/*   Created: 2018/11/08 16:42:15 by ezonda            #+#    #+#             */
+/*   Updated: 2018/11/08 16:58:37 by ezonda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *dest, const char *src)
+int		ft_strequ(char const *s1, char const *s2)
 {
-	int i;
-	int n;
-
-	n = ft_strlen(dest);
-	i = 0;
-	while (src[i])
-	{
-		dest[n] = src[i];
-		n++;
-		i++;
-	}
-	dest[n] = '\0';
-	return (dest);
+	if (ft_strcmp(s1, s2) == 0)
+		return (1);
+	else
+		return (0);
 }
