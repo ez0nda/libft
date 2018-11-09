@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ezonda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/07 17:56:09 by ezonda            #+#    #+#             */
-/*   Updated: 2018/11/09 09:50:44 by ezonda           ###   ########.fr       */
+/*   Created: 2018/11/09 10:25:08 by ezonda            #+#    #+#             */
+/*   Updated: 2018/11/09 10:30:36 by ezonda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strncmp(const char *s1, const char *s2, size_t n)
+void	ft_putnbr(int n)
 {
-	size_t i;
-
-	i = 0;
-	while ((s1[i]) && (s2[i]) && (s1[i] == s2[i]) && (i < n))
-		i++;
-	i = s1[i] - s2[i];
-	return (i);
+	if (n < 0)
+	{
+		ft_putchar('-');
+		n = -n;
+	}
+	if (n > 9)
+	{
+		ft_putnbr(n / 10);
+		ft_putnbr(n % 10);
+	}
+	else
+	{
+		n = n + '0';
+		ft_putchar(n);
+	}
 }

@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ezonda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/07 17:56:09 by ezonda            #+#    #+#             */
-/*   Updated: 2018/11/09 09:50:44 by ezonda           ###   ########.fr       */
+/*   Created: 2018/11/09 13:04:41 by ezonda            #+#    #+#             */
+/*   Updated: 2018/11/09 13:05:53 by ezonda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strncmp(const char *s1, const char *s2, size_t n)
+int		ft_isdigit(int c)
 {
-	size_t i;
-
-	i = 0;
-	while ((s1[i]) && (s2[i]) && (s1[i] == s2[i]) && (i < n))
-		i++;
-	i = s1[i] - s2[i];
-	return (i);
+	if (c >= 48 && c <= 57)
+		return (1);
+	else
+		return (0);
 }
