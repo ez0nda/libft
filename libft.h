@@ -52,5 +52,6 @@ int		ft_tolower(int c);
 void	ft_strclr(char *s);
 char	*ft_strnew(size_t size);
 char	*ft_itoa(int n); // not done
+char	*ft_strrev(char *s); //for itoa
 
 #endif
