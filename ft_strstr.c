@@ -6,7 +6,7 @@
 /*   By: ezonda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 09:14:15 by ezonda            #+#    #+#             */
-/*   Updated: 2018/11/08 10:15:56 by ezonda           ###   ########.fr       */
+/*   Updated: 2018/11/11 04:11:31 by ezonda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,21 @@
 char	*ft_strstr(const char *str, const char *to_find)
 {
 	int i;
-	int n;
+	int j;
 
 	i = 0;
-	n = 0;
-	if (to_find[n] == '\0')
-		return ((char *)&str[i]);
+	j = 0;
+	if (to_find[j] == '\0')
+		return ((char *)str);
 	while (str[i])
 	{
-		while ((str[i + n] == to_find[n]) && (str[i]) && (to_find[n]))
+		while ((str[i + j] == to_find[j]) && (str[i]) && (to_find[j]))
 		{
-			n++;
-			if (to_find[n] == '\0')
+			j++;
+			if (to_find[j] == '\0')
 				return ((char *)&str[i]);
 		}
-		n = 0;
+		j = 0;
 		i++;
 	}
 	return (0);

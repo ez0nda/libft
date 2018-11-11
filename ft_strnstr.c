@@ -1,36 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ezonda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/10 19:18:20 by ezonda            #+#    #+#             */
-/*   Updated: 2018/11/11 03:49:37 by ezonda           ###   ########.fr       */
+/*   Created: 2018/11/11 03:42:23 by ezonda            #+#    #+#             */
+/*   Updated: 2018/11/11 04:13:18 by ezonda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strnstr(const char *str, const char *to_find, size_t n)
 {
-	int i;
+	size_t i;
+	int j;
 
 	i = 0;
-	while (1)
+	j = 0;
+	if (to_find[j] == '\0')
+		return ((char *)str);
+	while (str[i] && i < n)
 	{
-		if (s[i] == c)
-			return ((char *)&s[i]);
-		else if (s[i++] == '\0')
-			return (NULL);
+		while ((str[i + j] == to_find[j]) && (str[i]) && (to_find[j]))
+		{
+			j++;
+			if (to_find[j] == '\0')
+				return ((char *)&str[i]);
+		}
+		j = 0;
+		i++;
 	}
+	return (0);
 }
 
 int		main(int ac, char **av)
 {
-	(void)ac;
-	printf("%s\n", ft_strchr(av[1], 101));
-	printf("%s", strchr(av[1], 101));
+	if (ac != 3)
+		return (1);
+	printf("%s\n", ft_strnstr(av[1], av[2], 5));
+	printf("%s", strnstr(av[1], av[2], 5));
 	return (0);
 }

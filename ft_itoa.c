@@ -6,32 +6,30 @@
 /*   By: ezonda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 15:09:30 by ezonda            #+#    #+#             */
-/*   Updated: 2018/11/09 17:08:16 by ezonda           ###   ########.fr       */
+/*   Updated: 2018/11/10 22:22:03 by ezonda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int		ft_counter(int n)
+int		ft_strsize(int n)
 {
-	int len;
+	int size;
 
-	len = 0;
+	size = 0;
 	if (n == 0)
-		len++;
+		size++;
 	if (n < 0)
 	{
-		len++;
+		size++;
 		n = -n;
 	}
 	while (n > 0)
 	{
-		len++;
+		size++;
 		n = n / 10;
 	}
-	printf("taille = %d\n", len);
-	return (len);
+	return (size);
 }
 
 char		*ft_itoa(int n)
@@ -42,7 +40,7 @@ char		*ft_itoa(int n)
 
 	i = 0;
 	nb = n;
-	str = ft_strnew(ft_counter(n));
+	str = ft_strnew(ft_strsize(n));
 	if (n < 0)
 		nb = -n;
 	if (nb == 0)
@@ -64,10 +62,4 @@ char		*ft_itoa(int n)
 	str[i] = '\0';
 	ft_strrev(str);
 	return (str);
-}
-
-int		main(void)
-{
-	printf("%s", ft_itoa(-42));
-	return (0);
 }

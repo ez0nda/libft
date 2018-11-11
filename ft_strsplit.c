@@ -6,16 +6,11 @@
 /*   By: ezonda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 11:20:02 by ezonda            #+#    #+#             */
-/*   Updated: 2018/11/08 15:38:19 by ezonda           ###   ########.fr       */
+/*   Updated: 2018/11/11 03:24:30 by ezonda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
 
 int		ft_number_of_words(const char *str, char c)
 {
@@ -92,31 +87,4 @@ char	**ft_strsplit(char const *s, char c)
 	i = 0;
 	ft_fill_tab(s, i, c, tab);
 	return (tab);
-}
-
-void	ft_print_words_tables(char **tab)
-{
-	int i;
-	int j;
-
-	i = 0;
-	while (tab[i])
-	{
-		j = 0;
-		while (tab[i][j])
-		{
-			ft_putchar(tab[i][j]);
-			j++;
-		}
-		ft_putchar('\n');
-		i++;
-	}
-}
-
-int		main(int ac, char **av)
-{
-	if (ac != 3)
-		return (1);
-	ft_print_words_tables(ft_strsplit(av[1], av[2][0]));
-	return (0);
 }

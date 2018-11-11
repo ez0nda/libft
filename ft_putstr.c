@@ -6,13 +6,13 @@
 /*   By: ezonda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 10:05:10 by ezonda            #+#    #+#             */
-/*   Updated: 2018/11/09 10:14:40 by ezonda           ###   ########.fr       */
+/*   Updated: 2018/11/10 22:15:20 by ezonda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char const *s)
+void	ft_putstr(const char *s)
 {
 	int i;
 

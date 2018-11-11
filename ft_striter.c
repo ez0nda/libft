@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_striter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ezonda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/10 19:18:20 by ezonda            #+#    #+#             */
-/*   Updated: 2018/11/11 03:49:37 by ezonda           ###   ########.fr       */
+/*   Created: 2018/11/10 20:50:27 by ezonda            #+#    #+#             */
+/*   Updated: 2018/11/10 22:16:27 by ezonda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-char	*ft_strchr(const char *s, int c)
+void	ft_striter(char *s, void (*f)(char *))
 {
-	int i;
-
-	i = 0;
-	while (1)
-	{
-		if (s[i] == c)
-			return ((char *)&s[i]);
-		else if (s[i++] == '\0')
-			return (NULL);
-	}
+	while (*s)
+		f(s++);
 }
 
-int		main(int ac, char **av)
+int		main(void)
 {
-	(void)ac;
-	printf("%s\n", ft_strchr(av[1], 101));
-	printf("%s", strchr(av[1], 101));
+	void (*f)(char*);
+
+	f = &ft_putstr;
+	ft_striter("test", f);
 	return (0);
 }

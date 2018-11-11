@@ -6,38 +6,32 @@
 /*   By: ezonda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 15:28:11 by ezonda            #+#    #+#             */
-/*   Updated: 2018/11/08 16:38:31 by ezonda           ###   ########.fr       */
+/*   Updated: 2018/11/10 19:12:02 by ezonda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 char	*ft_strtrim(char const *s)
 {
 	int i;
+	int j;
 	int n;
 	char *str;
 
 	i = 0;
+	j = 0;
 	n = 0;
-	str = NULL;
+	while (s[j])
+		j++;
+	str = ft_strnew(j);
+	while (s[j] <= 32)
+		j--;
 	while (s[i] <= 32)
 		i++;
-	while (s[i])
-	{
-		str[n] = s[i];
-		i++;
-		n++;
-	}
+	i--;
+	while (i++ < j)
+		str[n++] = s[i];
 	str[n] = '\0';
 	return (str);
-}
-
-int		main(int ac, char **av)
-{
-	if (ac != 2)
-		return (1);
-	printf("%s", ft_strtrim(av[1]));
-	return (0);
 }
