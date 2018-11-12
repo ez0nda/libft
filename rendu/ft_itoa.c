@@ -6,13 +6,13 @@
 /*   By: ezonda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 15:09:30 by ezonda            #+#    #+#             */
-/*   Updated: 2018/11/12 09:07:36 by ezonda           ###   ########.fr       */
+/*   Updated: 2018/11/12 17:29:13 by ezonda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strsize(int n)
+static int		ft_strsize(int n)
 {
 	int size;
 
@@ -32,33 +32,27 @@ int		ft_strsize(int n)
 	return (size);
 }
 
-char	*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
 	int		i;
-	int		nb;
+	long	nb;
 	char	*str;
 
 	i = 0;
 	nb = n;
-	str = ft_strnew(ft_strsize(n));
+	if (!(str = ft_strnew(ft_strsize(n))))
+		return (NULL);
 	if (n < 0)
-		nb = -n;
+		nb = -nb;
 	if (nb == 0)
-	{
-		str[i] = '0';
-		i++;
-	}
+		str[i++] = '0';
 	while (nb > 0)
 	{
-		str[i] = nb % 10 + '0';
+		str[i++] = nb % 10 + '0';
 		nb = nb / 10;
-		i++;
 	}
 	if (n < 0)
-	{
-		str[i] = '-';
-		i++;
-	}
+		str[i++] = '-';
 	str[i] = '\0';
 	ft_strrev(str);
 	return (str);

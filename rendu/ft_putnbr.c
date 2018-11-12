@@ -6,7 +6,7 @@
 /*   By: ezonda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 10:25:08 by ezonda            #+#    #+#             */
-/*   Updated: 2018/11/09 10:30:36 by ezonda           ###   ########.fr       */
+/*   Updated: 2018/11/12 13:39:55 by ezonda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,22 @@
 
 void	ft_putnbr(int n)
 {
-	if (n < 0)
+	long nb;
+
+	nb = n;
+	if (nb < 0)
 	{
 		ft_putchar('-');
-		n = -n;
+		nb = -nb;
 	}
-	if (n > 9)
+	if (nb > 9)
 	{
-		ft_putnbr(n / 10);
-		ft_putnbr(n % 10);
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
 	}
 	else
 	{
-		n = n + '0';
-		ft_putchar(n);
+		nb = nb + '0';
+		ft_putchar(nb);
 	}
 }

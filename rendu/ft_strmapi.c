@@ -6,7 +6,7 @@
 /*   By: ezonda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 02:32:47 by ezonda            #+#    #+#             */
-/*   Updated: 2018/11/12 09:04:37 by ezonda           ###   ########.fr       */
+/*   Updated: 2018/11/12 12:11:09 by ezonda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	i = 0;
 	while (s[i])
 		i++;
-	str = ft_strnew(i);
+	if (!(str = ft_strnew(i)))
+		return (NULL);
 	i = 0;
 	while (s[i])
 	{

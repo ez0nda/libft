@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ezonda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/09 14:54:14 by ezonda            #+#    #+#             */
-/*   Updated: 2018/11/12 12:52:16 by ezonda           ###   ########.fr       */
+/*   Created: 2018/11/11 04:51:13 by ezonda            #+#    #+#             */
+/*   Updated: 2018/11/12 11:18:08 by ezonda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+size_t		ft_strlcat(char *s1, const char *s2, size_t size)
 {
 	size_t	i;
-	char	*str;
+	int		c;
 
 	i = 0;
-	if (!(str = (char*)malloc(sizeof(char) * (size + 1))))
-		return (NULL);
-	while (str[i] && i < size)
-	{
-		str[i] = '\0';
+	c = 0;
+	while (s1[i] && i < size)
 		i++;
-	}
-	str[i] = '\0';
-	return (str);
+	while (s2[c])
+		c++;
+	return (c + i);
 }
