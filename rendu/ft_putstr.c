@@ -6,7 +6,7 @@
 /*   By: ezonda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 10:05:10 by ezonda            #+#    #+#             */
-/*   Updated: 2018/11/12 14:08:51 by ezonda           ###   ########.fr       */
+/*   Updated: 2018/11/13 12:53:29 by ezonda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_putstr(const char *s)
 	int i;
 
 	i = 0;
+	if (!(s))
+		return ;
 	while (s[i])
 	{
 		ft_putchar(s[i]);

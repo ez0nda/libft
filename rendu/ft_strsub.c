@@ -6,7 +6,7 @@
 /*   By: ezonda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 13:37:57 by ezonda            #+#    #+#             */
-/*   Updated: 2018/11/12 09:06:07 by ezonda           ###   ########.fr       */
+/*   Updated: 2018/11/13 11:28:46 by ezonda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 
 	sub = NULL;
 	i = 0;
+	if (!(s))
+		return (NULL);
 	if (!(sub = (char*)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	while (i < len)

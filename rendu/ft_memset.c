@@ -6,7 +6,7 @@
 /*   By: ezonda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 10:06:21 by ezonda            #+#    #+#             */
-/*   Updated: 2018/11/12 10:25:41 by ezonda           ###   ########.fr       */
+/*   Updated: 2018/11/13 16:20:56 by ezonda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	b = 0;
-	c = 0;
-	len = 0;
-	return (NULL);
+	char *str;
+
+	str = (char *)b;
+	while (len--)
+		*str++ = (char)c;
+	return (b);
 }

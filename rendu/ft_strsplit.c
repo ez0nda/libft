@@ -6,7 +6,7 @@
 /*   By: ezonda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 11:20:02 by ezonda            #+#    #+#             */
-/*   Updated: 2018/11/12 11:15:54 by ezonda           ###   ########.fr       */
+/*   Updated: 2018/11/13 11:29:31 by ezonda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,8 @@ char			**ft_strsplit(char const *s, char c)
 	char	**tab;
 
 	i = 0;
+	if (!(s))
+		return (NULL);
 	words = ft_number_of_words(s, c);
 	if (!(tab = (char**)malloc(sizeof(char*) * (words + 1))))
 		return (NULL);

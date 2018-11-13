@@ -6,7 +6,7 @@
 /*   By: ezonda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/10 21:51:38 by ezonda            #+#    #+#             */
-/*   Updated: 2018/11/12 12:11:16 by ezonda           ###   ########.fr       */
+/*   Updated: 2018/11/13 11:17:52 by ezonda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	char	*str;
 
 	i = 0;
+	if (!(s))
+		return (NULL);
 	while (s[i])
 		i++;
 	if (!(str = ft_strnew(i)))

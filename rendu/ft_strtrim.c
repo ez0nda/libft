@@ -6,7 +6,7 @@
 /*   By: ezonda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 15:28:11 by ezonda            #+#    #+#             */
-/*   Updated: 2018/11/12 09:06:59 by ezonda           ###   ########.fr       */
+/*   Updated: 2018/11/13 15:06:04 by ezonda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,12 @@ char	*ft_strtrim(char const *s)
 	i = 0;
 	j = 0;
 	n = 0;
+	if (!(s))
+		return (NULL);
+	if (!(str = ft_strnew(ft_strlen(s))))
+		return (NULL);
 	while (s[j])
 		j++;
-	str = ft_strnew(j);
 	while (s[j] <= 32)
 		j--;
 	while (s[i] <= 32)
