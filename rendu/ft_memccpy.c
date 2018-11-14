@@ -14,9 +14,26 @@
 
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	dst = 0;
-	src = 0;
-	c = 0;
-	n = 0;
-	return (NULL);
+
+	char *s1;
+	char *s2;
+	int i;
+
+	s1 = (char*)src;
+	s2 = (char*)dst;
+	i = 0;
+	while (n > 0 && s1[i] != c)
+	{
+		n--;
+		s2[i] = s1[i];
+		i++;
+	}
+	if (n > 0)
+	{
+		s2[i] = s1[i];
+		i++;
+		return ((void*)s2);
+	}
+	else
+		return (NULL);
 }

@@ -14,23 +14,20 @@
 
 char	*ft_strnstr(const char *str, const char *to_find, size_t n)
 {
-	size_t	i;
-	int		j;
+	size_t	len;
+	int		cmp;
 
-	i = 0;
-	j = 0;
-	if (to_find[j] == '\0')
-		return ((char *)str);
-	while (str[i] && i < n)
+	if (*to_find == '\0')
+		return ((char*)str);
+	len = ft_strlen(to_find);
+	cmp = 1;
+	while (len <= n && *str != '\0' && (cmp = ft_strncmp(str, to_find, len)))
 	{
-		while ((str[i + j] == to_find[j]) && (str[i]) && (to_find[j]))
-		{
-			j++;
-			if (to_find[j] == '\0')
-				return ((char *)&str[i]);
-		}
-		j = 0;
-		i++;
+		n--;
+		str++;
 	}
-	return (0);
+	if (cmp != 0)
+		return (NULL);
+	else
+return ((char *)str);
 }
