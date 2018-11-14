@@ -1,30 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ezonda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/11 00:50:36 by ezonda            #+#    #+#             */
-/*   Updated: 2018/11/14 11:20:53 by ezonda           ###   ########.fr       */
+/*   Created: 2018/11/14 17:14:22 by ezonda            #+#    #+#             */
+/*   Updated: 2018/11/14 17:15:14 by ezonda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
-	char	*t;
-
-	t = NULL;
-	while (*s)
-	{
-		if (*s == (char)c)
-			t = (char*)s;
-		s++;
-	}
-	if (*s == (char)c)
-		return ((char*)s);
-	else
-		return (t);
+	
 }
