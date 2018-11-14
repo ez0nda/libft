@@ -15,16 +15,18 @@
 size_t		ft_strlcat(char *s1, const char *s2, size_t size)
 {
 	size_t	i;
-	int		c;
-	int n;
+	size_t	n;
 
 	i = 0;
-	c = 0;
-	n = ft_strlen(s1);
-
+	n = 0;
 	while (s1[i] && i < size)
 		i++;
-	while (s2[c])
-		c++;
-	return (c + i);
+	while (s2[n] && (i + n + 1) < size)
+	{
+		s1[i + n] = s2[n];
+		n++;
+	}
+	if (i < size)
+		s1[i + n] = 0;
+	return (i + ft_strlen(s2));
 }
