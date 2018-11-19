@@ -1,36 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ezonda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/16 10:00:39 by ezonda            #+#    #+#             */
-/*   Updated: 2018/11/17 18:55:35 by ezonda           ###   ########.fr       */
+/*   Created: 2018/11/16 13:32:32 by ezonda            #+#    #+#             */
+/*   Updated: 2018/11/16 13:51:49 by ezonda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list		*ft_lstnew(void const *content, size_t content_size)
+int		ft_sqrt(int nb)
 {
-	t_list *m;
+	long sqrt;
+	long res;
 
-	m = malloc(sizeof(t_list));
-	if (m == NULL)
-		return (NULL);
-	if (content == NULL)
-	{
-		m->content = NULL;
-		m->content_size = 0;
-	}
+	if (nb % 2 == 0)
+		sqrt = 2;
 	else
+		sqrt = 1;
+	while (sqrt <= nb / 2)
 	{
-		if (!(m->content = malloc(sizeof(m->content_size))))
-			return (NULL);
-		ft_memcpy(m->content, content, content_size);
-		m->content_size = content_size;
+		res = sqrt * sqrt;
+		if (res == nb)
+			return (sqrt);
+		else
+			sqrt = sqrt + 2;
 	}
-	m->next = NULL;
-	return (m);
+	if (nb == 1)
+		return (1);
+	if (nb == 4)
+		return (2);
+	return (0);
 }

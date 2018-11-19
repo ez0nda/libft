@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ezonda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/16 10:52:59 by ezonda            #+#    #+#             */
-/*   Updated: 2018/11/16 11:47:05 by ezonda           ###   ########.fr       */
+/*   Created: 2018/11/17 19:21:05 by ezonda            #+#    #+#             */
+/*   Updated: 2018/11/17 19:43:25 by ezonda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,24 @@
 
 t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	t_list	*m;
-	t_list	*first;
-	t_list	*tmp;
-	t_list	*new;
-	t_list *nxt;
+	t_list *m;
+	t_list *first;
+	t_list *new;
 
-	m = lst;
-	first = NULL;
-	if (m != NULL)
+	if (!(lst))
+		return (NULL);
+	m = f(lst);
+	if ((new = ft_lstnew(m->content, m->content_size)) == NULL)
+		return (NULL);
+	first = new;
+	lst = lst->next;
+	while (lst)
 	{
-		if (!(first = ft_lstnew(m->content, m->content_size)))
+		m = f(lst);
+		if ((new->next = ft_lstnew(m->content, m->content_size)) == NULL)
 			return (NULL);
-		nxt = m->next;
-		first = f(first);
-		tmp = first;
-		m = nxt;
-	}
-	while (m != NULL)
-	{
-		if (!(new = ft_lstnew(m->content, m->content_size)))
-			return (NULL);
-		nxt = m->next;
-		new = f(new);
-		tmp->next = new;
-		m = m->next;
+		new = new->next;
+		lst = lst->next;
 	}
 	return (first);
 }

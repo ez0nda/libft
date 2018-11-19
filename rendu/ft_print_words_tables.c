@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_print_words_tables.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ezonda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/16 10:00:39 by ezonda            #+#    #+#             */
-/*   Updated: 2018/11/17 18:55:35 by ezonda           ###   ########.fr       */
+/*   Created: 2018/11/16 16:39:07 by ezonda            #+#    #+#             */
+/*   Updated: 2018/11/16 16:57:41 by ezonda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list		*ft_lstnew(void const *content, size_t content_size)
+void	ft_print_words_tables(char **tab)
 {
-	t_list *m;
+	int i;
+	int j;
 
-	m = malloc(sizeof(t_list));
-	if (m == NULL)
-		return (NULL);
-	if (content == NULL)
+	i = 0;
+	while (tab[i])
 	{
-		m->content = NULL;
-		m->content_size = 0;
+		j = 0;
+		while (tab[i][j])
+		{
+			ft_putchar(tab[i][j]);
+			j++;
+		}
+		ft_putchar('\n');
+		i++;
 	}
-	else
-	{
-		if (!(m->content = malloc(sizeof(m->content_size))))
-			return (NULL);
-		ft_memcpy(m->content, content, content_size);
-		m->content_size = content_size;
-	}
-	m->next = NULL;
-	return (m);
 }

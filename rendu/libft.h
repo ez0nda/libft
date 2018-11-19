@@ -6,7 +6,7 @@
 /*   By: ezonda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 13:18:21 by ezonda            #+#    #+#             */
-/*   Updated: 2018/11/16 10:23:56 by ezonda           ###   ########.fr       */
+/*   Updated: 2018/11/17 21:28:59 by ezonda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,5 +83,9 @@ void			ft_lstadd(t_list **alst, t_list *nw);
 void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list			*ft_lstnew(void const *content, size_t content_size);
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+int				ft_is_prime(int nb);
+int				ft_recursive_power(int nb, int pow);
+int				ft_sqrt(int nb);
+void			ft_print_words_tables(char **tab);
 
 #endif

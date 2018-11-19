@@ -6,7 +6,7 @@
 /*   By: ezonda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 04:51:13 by ezonda            #+#    #+#             */
-/*   Updated: 2018/11/15 20:00:34 by ezonda           ###   ########.fr       */
+/*   Updated: 2018/11/17 18:02:02 by ezonda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ size_t		ft_strlcat(char *s1, const char *s2, size_t size)
 		n++;
 	}
 	if (i < size)
-		s1[i + n] = 0;
+		s1[i + n] = '\0';
 	return (i + ft_strlen(s2));
 }

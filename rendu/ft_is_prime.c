@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_is_prime.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ezonda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/16 10:00:39 by ezonda            #+#    #+#             */
-/*   Updated: 2018/11/17 18:55:35 by ezonda           ###   ########.fr       */
+/*   Created: 2018/11/16 15:49:28 by ezonda            #+#    #+#             */
+/*   Updated: 2018/11/16 15:52:00 by ezonda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list		*ft_lstnew(void const *content, size_t content_size)
+int		ft_is_prime(int nb)
 {
-	t_list *m;
+	long i;
 
-	m = malloc(sizeof(t_list));
-	if (m == NULL)
-		return (NULL);
-	if (content == NULL)
-	{
-		m->content = NULL;
-		m->content_size = 0;
-	}
-	else
-	{
-		if (!(m->content = malloc(sizeof(m->content_size))))
-			return (NULL);
-		ft_memcpy(m->content, content, content_size);
-		m->content_size = content_size;
-	}
-	m->next = NULL;
-	return (m);
+	i = 0;
+	if (nb < 2)
+		return (0);
+	if (nb == 2)
+		return (1);
+	while (i * i < nb)
+		i++;
+	while ((nb % i != 0) && (i > 2))
+		i--;
+	return (nb % i);
 }

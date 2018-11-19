@@ -6,11 +6,12 @@
 /*   By: ezonda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 03:42:23 by ezonda            #+#    #+#             */
-/*   Updated: 2018/11/14 12:50:27 by ezonda           ###   ########.fr       */
+/*   Updated: 2018/11/17 18:50:57 by ezonda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 char	*ft_strnstr(const char *str, const char *to_find, size_t n)
 {

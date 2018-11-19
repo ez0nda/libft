@@ -6,7 +6,7 @@
 /*   By: ezonda <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 15:09:30 by ezonda            #+#    #+#             */
-/*   Updated: 2018/11/14 17:00:13 by ezonda           ###   ########.fr       */
+/*   Updated: 2018/11/17 17:47:06 by ezonda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,22 @@
 
 static int		ft_strsize(int n)
 {
-	int size;
+	int		size;
+	long	nb;
 
 	size = 0;
-	if (n == 0)
+	nb = n;
+	if (nb == 0)
 		size++;
-	if (n < 0)
+	if (nb < 0)
 	{
 		size++;
-		n = -n;
+		nb = -nb;
 	}
-	while (n > 0)
+	while (nb > 0)
 	{
 		size++;
-		n = n / 10;
+		nb = nb / 10;
 	}
 	return (size);
 }
